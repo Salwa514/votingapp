@@ -3,54 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback Voting</title>
-    <style>
-        body { text-align: center; font-family: Arial, sans-serif; margin-top: 50px; }
-        .button { font-size: 80px; padding: 20px; margin: 20px; cursor: pointer; }
-        #results { margin-top: 50px; font-size: 20px; }
-    </style>
+    <title>Voting App</title>
 </head>
 <body>
-    <h1>How was your experience?</h1>
-    <div id="smiley" class="button">😊</div>
-    <div id="sad" class="button">😞</div>
-    <p id="thanks" style="display:none;">Thank you for your feedback!</p>
-    <div id="results">
-        <p>Smiley: <span id="smileyCount">0</span></p>
-        <p>Sad: <span id="sadCount">0</span></p>
-    </div>
-
-    <script>
-        // Initialize vote counts from local storage
-        let smileyCount = parseInt(localStorage.getItem('smileyCount')) || 0;
-        let sadCount = parseInt(localStorage.getItem('sadCount')) || 0;
-
-        // Update the display counts
-        document.getElementById('smileyCount').textContent = smileyCount;
-        document.getElementById('sadCount').textContent = sadCount;
-
-        document.getElementById('smiley').onclick = function() {
-            vote('smiley');
-        };
-        document.getElementById('sad').onclick = function() {
-            vote('sad');
-        };
-
-        function vote(type) {
-            if (type === 'smiley') {
-                smileyCount++;
-                localStorage.setItem('smileyCount', smileyCount);
-            } else {
-                sadCount++;
-                localStorage.setItem('sadCount', sadCount);
-            }
-            document.getElementById('smileyCount').textContent = smileyCount;
-            document.getElementById('sadCount').textContent = sadCount;
-            document.getElementById('thanks').style.display = 'block';
-            setTimeout(() => {
-                document.getElementById('thanks').style.display = 'none';
-            }, 1500);
-        }
-    </script>
+    <h1>Welcome to the Voting App</h1>
+    <button onclick="alert('You clicked the smiley face!')">😊</button>
+    <button onclick="alert('You clicked the sad face!')">😞</button>
 </body>
 </html>
